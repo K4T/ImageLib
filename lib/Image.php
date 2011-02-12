@@ -138,7 +138,7 @@ class Image {
 
         if(!$scaleSmaller && $this->width <= $newWidth && $this->height <= $newHeight)
         {
-            return $this->image;
+            return;
         }
 
         $factor = min(($newWidth / $this->width), ($newHeight / $this->height));
@@ -157,7 +157,7 @@ class Image {
 
         if(!$scaleSmaller && $this->width <= $newWidth && $this->height <= $newHeight)
         {
-            return $this->image;
+            return;
         }
 
         $factor = min(($this->width / $newWidth), ($this->height / $newHeight));
@@ -179,7 +179,7 @@ class Image {
 
         if(!$scaleSmaller && $this->width <= $newWidth && $this->height <= $newHeight)
         {
-            return $this->image;
+            return;
         }
 
         $scaledImage = imagecreatetruecolor($newWidth, $newHeight);
