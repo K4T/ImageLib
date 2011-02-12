@@ -7,9 +7,9 @@ class Image {
     private $height;
 
     //copy of source image, so restore option is possible.
-    private $oryginalImage;
-    private $oryginalWidth;
-    private $oryginalHeight;
+    private $originalImage;
+    private $originalWidth;
+    private $originalHeight;
 
     public function __construct()
     {
@@ -29,9 +29,9 @@ class Image {
             throw new Exception('Cannot initialize new GD image stream.');
         }
 
-        $this->oryginalImage = $this->image;
-        $this->width = $this->oryginalWidth = $width;
-        $this->height = $this->oryginalHeight = $height;
+        $this->originalImage = $this->image;
+        $this->width = $this->originalWidth = $width;
+        $this->height = $this->originalHeight = $height;
     }
     
     public function load($filename)
@@ -50,8 +50,8 @@ class Image {
         $this->destroy();
 
         list($this->width, $this->height) = $imageInfo;
-        $this->oryginalWidth = $this->width;
-        $this->oryginalHeight = $this->height;
+        $this->originalWidth = $this->width;
+        $this->originalHeight = $this->height;
 
         switch ($imageInfo[2])
         {
@@ -72,7 +72,7 @@ class Image {
                 throw new Exception('Image type not supported!');
         }
 
-        $this->oryginalImage = $this->image;
+        $this->originalImage = $this->image;
     }
 
     public function saveAsJPG($filename, $jpgQuality = 100, $destroy = false)
@@ -127,9 +127,9 @@ class Image {
     {
         $this->isImageInitialized();
 
-        $this->image = $this->oryginalImage;
-        $this->width = $this->oryginalWidth;
-        $this->height = $this->oryginalHeight;
+        $this->image = $this->originalImage;
+        $this->width = $this->originalWidth;
+        $this->height = $this->originalHeight;
     }
 
     public function scaleProportional($newWidth, $newHeight, $scaleSmaller = true)
