@@ -146,7 +146,7 @@ class Image {
         $finalHeight = ceil($this->height * $factor);
 
         $scaledImage = imagecreatetruecolor($finalWidth, $finalHeight);
-	    imagecopyresampled($scaledImage, $this->image, 0, 0, 0, 0, $finalWidth, $finalHeight, $this->width, $this->height);
+        imagecopyresampled($scaledImage, $this->image, 0, 0, 0, 0, $finalWidth, $finalHeight, $this->width, $this->height);
 
         $this->setNewImage($scaledImage, $finalWidth, $finalHeight);
     }
@@ -168,7 +168,7 @@ class Image {
         $y = round(($this->height - $finalHeight) / 2);
 
         $scaledImage = imagecreatetruecolor($newWidth, $newHeight);
-	    imagecopyresampled($scaledImage, $this->image, 0, 0, $x, $y, $newWidth, $newHeight, $finalWidth, $finalHeight);
+        imagecopyresampled($scaledImage, $this->image, 0, 0, $x, $y, $newWidth, $newHeight, $finalWidth, $finalHeight);
 
         $this->setNewImage($scaledImage, $finalWidth, $finalHeight);
     }
@@ -183,7 +183,7 @@ class Image {
         }
 
         $scaledImage = imagecreatetruecolor($newWidth, $newHeight);
-	    imagecopyresampled($scaledImage, $this->image, 0, 0, 0, 0, $newWidth, $newHeight, $this->width, $this->height);
+        imagecopyresampled($scaledImage, $this->image, 0, 0, 0, 0, $newWidth, $newHeight, $this->width, $this->height);
 
         $this->setNewImage($scaledImage, $newWidth, $newHeight);
     }
