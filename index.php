@@ -9,7 +9,7 @@
         $image = new Image();
         $image->load('sample.jpg');
 
-        echo '[OK]<br/>Resizing image...';
+        echo '[OK]<br/>Scaling image...';
 
         $image->scaleProportional(200, 200);
         $image->saveAsJPG('scaleProportional.jpg');
